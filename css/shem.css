@@ -54,6 +54,15 @@ li{
 li:hover{
 	background-color: #888;
 }
+/* it is counter productive to repeat the same thing
+	instead you can put that in one class and assing the same
+	class to multiple element.
+	// TODO: refactor the card ... instead of repeating ids, use class.
+	// TODO: add the class .my-card and make other adjustments ...
+*/
+.my-card {
+	position: relative;
+}
 #card{
 
 	height: 100px;

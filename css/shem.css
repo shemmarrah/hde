@@ -1,4 +1,23 @@
 /*
+CSS:
+	1. Aesthetics (pretty look, how accurate)
+	** 2. Arcitechture (web designer miss this ....) **
+			- css architecture ...
+				- shadow dom, web component
+				- scope:
+					- global in css, and web components try to create scope.
+		Andy hume css for grown ups
+		https://www.youtube.com/watch?v=ZpFdyfs03Ug
+*/
+
+@font-face {
+	font-family: myFirstFont;
+	src: url(fonts/Brandon_thin_it.otf);
+	src: url(fonts/Brandon_reg_it.otf);
+	src: url(fonts/Brandon_med.otf);
+}
+
+/*
 
 	- When to use descendent selector (combinator) ?
 	- Is it a great idea to use IDs to target elements even if you know that element is going to be unique ?
@@ -12,48 +31,16 @@
 
 */
 
-*{margin: 0; padding: 0;}
+
+/*
+	it's okay if you have to use it. But, it should be used sparsely.
+*/
+* {margin: 0; padding: 0;}
 
 body{
 	background-color: #999;
-	
 }
 
-
-#menue_bar{
-
-	background-color: #777;
-	height:50px;
-}
-
-#menue_bar p{
-
-	margin: 10px 0 0 0;
-	text-align: center;
-	width: 100%;
-	
-}
-
-ul{
-	list-style: none;
-
-}
-
-
-li{
-	display: inline-block;
-	width: 20%;
-	background-color: #444;
-	float: left;
-	color:#fff;
-	height: 50px;
-	text-align: center;
-}
-/*shemmarrah made changes 3-10-15*/
-
-li:hover{
-	background-color: #888;
-}
 /* 
 	it is counter productive to repeat the same thing
 	instead you can put that in one class and assing the same
@@ -63,12 +50,10 @@ li:hover{
 */
 .my-card {
 	position: relative;
-
 }
 
 
 .card{
-
 	height: 100px;
 	width: 25%;
 	background-color: #666;
@@ -77,28 +62,124 @@ li:hover{
 	position: relative;
 	min-width: 490px;
 	margin-left: 5%;
-
 }
 
 
 
 
-p{ 
+/*
+	Bad because:
+		- not reusable
+		- hard to override -- specificity issue.
+		- hard to maintain
+*/
+.names {
 
-	left: 100px;
-	text-align: left;
-	font-family: ;
-	font-size: 14px;
+}
+
+/*
+css side effects article and BEM naming convention
+problems in css
+
+	 - avoiding unexpected behavior and selector matching
+	 - minimizing specificity
+
+	http://philipwalton.com/articles/side-effects-in-css/
+*/
+/*descendant, selector/combinator*/
+/* BAD BAD BAD */
+.page-about .header .names {
+	/* use modifier instead ...*/
+	/*.names.names-cap {
+	}*/
+}
+
+
+/*
+	What is the problem with setting global styles that are specific to a global base element ?
+
+		- only set base and minimal styles for html elements.
+
+*/
+
+/*
+	HTML element selector ??????
+	BE CAREFUL
+*/
+p {
 	font-family: myFirstFont;
+	text-align: left;
+}
 
-	}
+/*
+	title and title 2 have the same styles
+	except, title2 has margin bottom.
+*/
 
+/* GROUPING IS ALWAYS GOOD
+	good talk on youtube about css grouping and wordpress conf
+	css structure
+
+*/
+.title, .title2 {
+	color: red;
+	font-size: 20px;
+}
+
+.title2 {
+	margin-bottom: 30px;
+}
+
+
+.btn-lg, .btn-small {
+	color: black;
+}
+
+.btn-lg {
+	line-height: 16px;
+}
+
+.btn-small {
+	line-height: 10px;
+}
+
+
+/* content and modifier classes */
+
+/*
+	dont use elements because they will change
+	- CHANGE CHANGE CHANGE CHANGE ≠ reliability
+	-- CHANGE CHANGE is EVIL -- 
+	- Weapon to fight change:
+		- good structure
+		- 
+		- not qualifying selectors: NO NONNONONONOOONONONONONONON
+		 .main.hello.somthinelse ul li:first- child + li {}
+		- and other things on the top of the source file.
+*/
+
+.title {
+
+}
+
+.title.title-imp {
+
+}
+
+
+
+.name {
+	left: 100px;
+}
+
+
+/*
+	BEM for naming convention
+*/
 .clients_image{
-
 	height: 100px;
 	width: 100px;
 	float: left;
-	
 }
 
 
@@ -125,18 +206,33 @@ img{
 	
 }
 
+/*
+	When do you think it is ok to use IDs ? and when is it not ?
+		IDS:
+			- target things
+			- An id can appear only once throughout. ONLY ONCE.
+		classes:
+			- target things
+			- you can have multipe classes obviously. ...
 
-#info_text{
+		What's the problem with using ids ? What problems you might you run into ?
+			- not re-useable ... you can't create moduels with ids. Things are ever changing ... GOLDEN RULE #1
+			- ERROR
+			- It increases the rank in the selector, and you always want to minize the rank (speceficity) Don't use IDS for ccs selectors.
+
+*/
+
+.myinfo { color: blue; }
+
+#info_text {
 	height: 60px;	
 	width: 100%;
 	background-color:#fff;
 	padding-top: 40px;
-
 }
 
 
 .ranking{
-
 	height: 50px;
 	background-color: green;
 	width: 50px;
@@ -161,29 +257,35 @@ img{
 	right:0;
 	bottom: 0;
 	position: absolute;
-
 }
 
+/* desc is ok as long as the 
+	depth is not deep.
 
-.money_raised p{
-	
+	deep:
+		about page and you set everything in there in relation to that.
+
+	shallow:
+		card, and you just wanna set the title of that card.
+
+	child vs descendent selector:
+	.money_raised > p {}
+	.money_raised p { }
+
+*/
+.money_raised p {
 	text-align: center;
-
 }
 
-@font-face {
-    font-family: myFirstFont;
-    src: url(fonts/Brandon_thin_it.otf);
-    src: url(fonts/Brandon_reg_it.otf);
-    src: url(fonts/Brandon_med.otf);
-   
+/*
+https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS
+*/
+
+/* descendent */
+.shem p {
+	color: red;
 }
-
-
-
-
-
-
-
-
-
+/* >: child */
+.shem > p { 
+	color: blue;
+}

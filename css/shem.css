@@ -291,3 +291,23 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS
 .shem > p { 
 	color: blue;
 }
+
+/*global style*/
+h2 {
+	color: black;
+	font-size: 20px;
+}
+
+.card > h2 {
+	font-size: 30px;
+}
+
+
+/* shadow dom: SCOPE is possible in shadow dom and web components !!!!! */
+/* CSS has global scope and that is the main problem of css. systemic. */
+/* BEM name convention tries to mitigate the problem */
+
+/*follow the convenstions and the things that we talked about*/
+/*try to make your comopoent, card as self contained as possible so other styles wouldnt be able to affect how it lookss
+so that later we can wrap it into an angular directive once we get into angular.
+*/

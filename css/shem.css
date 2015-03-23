@@ -108,10 +108,7 @@ problems in css
 	HTML element selector ??????
 	BE CAREFUL
 */
-p {
-	font-family: myFirstFont;
-	text-align: left;
-}
+
 
 /*
 	title and title 2 have the same styles
@@ -202,7 +199,6 @@ p {
 img{
 
 	max-width: 100%;
-	height: 100px;
 	float: left;
 	border: none;
 	
@@ -301,6 +297,54 @@ h2 {
 .card > h2 {
 	font-size: 30px;
 }
+
+/*
+
+pokemon card section /////////////////////////////
+//////////////////////////////////////////////////
+////////////////////////////
+*/
+
+p, h4 {
+	font-family: myFirstFont;
+	text-align: left;
+}
+
+.game-card{
+	height: 350px;
+	width: 15%;
+	float: left;
+	position: relative;
+	background-color: #777;
+	min-width: 170px;
+	max-width: 200px;
+}
+.game-card--image{
+
+	height: 150px;
+	width: 85%;
+	background-color: #555;
+	margin: 0 auto;
+	margin-top: 5%;
+}
+
+.p-image img{
+ min-height: 170px; 
+ min-width: 90px; 
+}
+
+.game-card--text{
+
+	position: relative;
+	left: 7.5%;
+	width: 85%;
+}
+
+.game-card-text p{
+	font-size: 12px;
+}
+
+
 
 
 /* shadow dom: SCOPE is possible in shadow dom and web components !!!!! */

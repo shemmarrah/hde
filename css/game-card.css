@@ -1,0 +1,38 @@
+/* card module */
+@font-face {
+	font-family: myFirstFont;
+	src: url(fonts/Brandon_thin_it.otf);
+	src: url(fonts/Brandon_reg_it.otf);
+	src: url(fonts/Brandon_med.otf);
+}
+.game-card{
+	height: 350px;
+	width: 15%;
+	float: left;
+	position: relative;
+	background-color: #777;
+	min-width: 170px;
+	max-width: 200px;
+}
+.game-card--display {
+	height: 150px;
+	width: 85%;
+	background-color: #555;
+	margin: 0 auto;
+	margin-top: 5%;
+}
+.game-card--image {
+	min-height: 170px; 
+	min-width: 90px; 
+	max-width: 100%;
+	float: left;
+	border: none;
+}
+.game-card--details{
+	position: relative;
+	left: 7.5%;
+	width: 85%;
+	font-size: 12px;
+	font-family: "myFirstFont", arial, sans-serif;
+}
+.game-card--title { font-size: 20px; }

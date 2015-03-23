@@ -436,3 +436,11 @@ p,h1,h2,h3,h4,h5, ul, li {
 	-webkit-margin-end: 0;
 	font-weight: normal;
 }
+
+.shmH-hide {
+	display: none;
+}
+
+.shmH-text-adjust {
+	text-align: center;
+}

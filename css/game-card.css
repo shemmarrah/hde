@@ -35,4 +35,4 @@
 	font-size: 12px;
 	font-family: "myFirstFont", arial, sans-serif;
 }
-.game-card--title { font-size: 20px; }
+.game-card--title { font-size: 20px; text-transform: uppercase }

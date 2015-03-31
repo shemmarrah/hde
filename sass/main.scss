@@ -1,0 +1,53 @@
+@import "variables"; // the partial should have _ in the beginning of the file name.
+// using variables
+body {
+	color: $primary;
+}
+// using mixin:
+@mixin center {
+	text-align: center;
+	margin: 0 auto;
+}
+.box {
+	padding: 20px;
+	@include center;
+}
+
+// using extend.
+.btn { // base
+	color: #000;
+	line-height: 0;
+	padding: 0;
+}
+// all the styles of btn AND some more stuff.
+.btn-big {
+	@extend .btn;
+	padding: 5px 10px;
+}
+// nesting ... .
+.card {
+	.card-item {
+		color: red;
+	}
+	> .card-title {
+		color: blue;
+	}
+	> .card-footer {
+		color: orange;
+	}
+}
+
+ul {  // ul > li:last-child { padding-right: 0 }
+	position: relative;
+	> li {
+		list-style: none;
+		padding-right: 10px;
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}
+
+
+// TODO: convert your card to sass: yugio-card.css
+// yugio-card.css -> sass/main.scss

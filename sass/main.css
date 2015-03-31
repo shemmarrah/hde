@@ -1,0 +1,33 @@
+/*
+	Variables.
+*/
+body {
+  color: #343434; }
+
+.box {
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto; }
+
+.btn, .btn-big {
+  color: #000;
+  line-height: 0;
+  padding: 0; }
+
+.btn-big {
+  padding: 5px 10px; }
+
+.card .card-item {
+  color: red; }
+.card > .card-title {
+  color: blue; }
+.card > .card-footer {
+  color: orange; }
+
+ul {
+  position: relative; }
+  ul > li {
+    list-style: none;
+    padding-right: 10px; }
+    ul > li:last-child {
+      padding-right: 0; }
